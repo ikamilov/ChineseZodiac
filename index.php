@@ -10,12 +10,12 @@
 	<?php include 'includes/inc_text_links.php'; ?>
 	<?php 
 	if (isset($_GET['page'])) {
-              switch ($_GET['page']) {
-                   case 'site_layout':
-						include('includes/inc_site_layout.php');
+      switch ($_GET['page']) {
+          case 'site_layout':
+					   include('includes/inc_site_layout.php');
                         break;
-                   case 'control_structures':
-                        include('includes/inc_control_structures.php');
+          case 'control_structures':
+                include('includes/inc_control_structures.php');
 						break;
 					case 'string_functions':
      					include('includes/inc_string_functions.php');
