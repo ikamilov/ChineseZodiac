@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Images</title>
+</head>
+<body>
+<form method="post" >
+  <input type="file" name="filename">
+  <input type="submit" value="Upload File">
+</form>
+
+<?php
+	$directory = "images";
+	$tmp_name = $_FILES["filename"]["tmp_name"];
+	$newname = getname();
+	if (isset($_FILES['filename'])) {
+	if ( move_uploaded_file($_FILES["filename"]["tmp_name"], $directory."/".$newname) === FALSE) {
+	  echo "Could not upload file " . htmlentities($_FILES['filename']['name']) . "<br />\n";
+	}else {
+		  chmod( $directory . "/" . $newname, 0644);
+		  echo "successfully uploaded file " . htmlentities($_FILES['filename']['name']) . " to ".
+		  $newname."<br />\n";
+		}
+	}
+	
+	function getname() {
+	  $directory = "images";
+	  $files = glob($directory."/Dragon*.jpg");
+	  natsort($files);
+	  preg_match('!Dragon(\d+)!', end($files), $matches);
+	  $newname = 'Dragon' . ($matches[1] + 1) . '.jpg';
+	  return $newname;
+	}
+?>
+</body>
+</html>
