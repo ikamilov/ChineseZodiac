@@ -1,0 +1,39 @@
+.container {
+	width:960px;
+	margin: 0 auto;
+}
+
+.button-main {
+	width: 150px;
+}
+
+.btn {
+	padding: 13px 15px;
+	padding-left: 0px;
+	float: left;
+}
+.footer {
+	width:960px;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+	background: red;
+	clear: both;
+}
+.text-navigation {
+	width: 960px;
+	height: 20px;
+	text-align: center;
+}
+
+.text-navigation a {
+	margin: 3px;
+	float: center;
+}
+
+.dynamic {
+	padding-top: 10px;
+	padding-bottom: 25px;
+	width: 780px;
+	float: right;
+}
